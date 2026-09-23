@@ -1,4 +1,4 @@
-name: CI/CD frontend-api
+name: CI/CD frontend-app
 
 on:
   push:
