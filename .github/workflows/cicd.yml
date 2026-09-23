@@ -1,4 +1,4 @@
-name: CI/CD frontend-app
+name: CI/CD frontend-app.
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
   unit-test-job:
 
     runs-on: ubuntu-latest
-    
+
     steps:
 
       - name: Clone Source Code
