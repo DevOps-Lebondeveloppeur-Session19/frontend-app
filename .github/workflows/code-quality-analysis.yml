@@ -23,4 +23,4 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=DevOps-Lebondeveloppeur-Session19_frontend-app
-            -Dsonar.organization=DevOps-Lebondeveloppeur-Session19
+            -Dsonar.organization=devops-lebondeveloppeur-session19
