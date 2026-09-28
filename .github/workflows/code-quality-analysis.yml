@@ -1,5 +1,5 @@
 # ✅ Name of the Workflow
-name: Pipeline CI/CD sonarqube-code-quality-scan-job.
+name: Pipeline CI/CD sonarqube-code-quality-scan-job
 
 # ✅ Trigger this workflow on pull request to main branch...
 on:
