@@ -39,9 +39,6 @@ jobs:
             trivy --version
 
 
-  # docker build -t ${{ env.IMAGE_NAME }} .
-  # trivy image ${{ env.IMAGE_NAME }}
-        
         - name: Run Trivy Docker image vulnerability scan
           run: |
         
