@@ -6,7 +6,9 @@ on:
       - main
 
 jobs:
+
   sonarqube-code-quality-scan-job:
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +22,30 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
-        #with:
-          #args: >
-          #  -Dsonar.projectKey=DevOps-Lebondeveloppeur-Session19_frontend-app
-           # -Dsonar.organization=devops-lebondeveloppeur-session19
+
+  trivy-image-security-scan-job:
+      runs-on: ubuntu-latest
+      steps:      
+
+        - name: Checkout Code
+          uses: actions/checkout@v4
+
+        - name: Download and install Trivy
+          run: |
+            sudo apt-get update && sudo apt-get install -y curl
+            curl -sSL https://github.com/aquasecurity/trivy/releases/download/v0.74.0/trivy_0.74.0_Linux-32bit.tar.gz -o trivy.tar.gz
+            tar xzvf trivy.tar.gz
+            sudo mv trivy /usr/local/bin/
+            trivy --version
+
+
+  # docker build -t ${{ env.IMAGE_NAME }} .
+  # trivy image ${{ env.IMAGE_NAME }}
+        
+        - name: Run Trivy Docker image vulnerability scan
+          run: |
+        
+            trivy fs .  # solution alternative 
+
+
+
