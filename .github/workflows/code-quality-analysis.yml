@@ -41,13 +41,11 @@ jobs:
 
   # docker build -t ${{ env.IMAGE_NAME }} .
   # trivy image ${{ env.IMAGE_NAME }}
-  # trivy fs .  # solution alternative 
+        
         - name: Run Trivy Docker image vulnerability scan
           run: |
-            IMAGE_NAME="frontend-app:latest"
-            docker build -t $IMAGE_NAME .
-            trivy image $IMAGE_NAME
-            
+        
+            trivy fs .  
 
 
 
