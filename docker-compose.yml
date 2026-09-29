@@ -1,6 +1,6 @@
 name: frontend-app-stack
 
-# Define services
+# Define services.
 services:
   frontend-app:
     build:
